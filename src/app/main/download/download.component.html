@@ -1,51 +1,54 @@
 <div class="pad-20" style="min-height: 200px;background-color: #ffffffe0;">
-    <form [formGroup]="campaignTwo" novalidate>
-  <div class="flex align-c justify-c">
-    <div>
-      <div class="font-20 pad-tb-20 flex justify-c" style="color: var(--color-primary);">Download Results</div>
-      <div class="flex ">
-        <mat-form-field class="width-100" appearance="fill">
-          <mat-label>Date Range</mat-label>
-          <mat-date-range-input [rangePicker]="campaignOnePicker" [comparisonStart]="campaignTwo.value.start"
-            [comparisonEnd]="campaignTwo.value.end">
-            <input matStartDate placeholder="Start date" formControlName="start" (focus)="campaignOnePicker.open()">
-            <input matEndDate placeholder="End date" formControlName="end" (focus)="campaignOnePicker.open()">
-          </mat-date-range-input>
-          <mat-datepicker-toggle matSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
-          <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
-        </mat-form-field>
-        <div style="grid-template-columns: 100px 100px;margin: auto auto 24px 10px;" class="grid grid-gap-10">
-          <button mat-raised-button color="primary" (click)="submit()">Submit</button>
-          <button mat-raised-button *ngIf="!!data.length" [disabled]="!data.length" (click)="downloadAsPDF()">Download</button>
+  <form [formGroup]="campaignTwo" novalidate>
+    <div class="flex align-c justify-c">
+      <div>
+        <div class="font-20 pad-tb-20 flex justify-c" style="color: var(--color-primary);">Download Results</div>
+        <div class="flex ">
+          <mat-form-field class="width-100" appearance="fill">
+            <mat-label>Date Range</mat-label>
+            <mat-date-range-input [rangePicker]="campaignOnePicker" [comparisonStart]="campaignTwo.value.start"
+              [comparisonEnd]="campaignTwo.value.end">
+              <input matStartDate placeholder="Start date" formControlName="start" (focus)="campaignOnePicker.open()">
+              <input matEndDate placeholder="End date" formControlName="end" (focus)="campaignOnePicker.open()">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
+            <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+          </mat-form-field>
+          <div style="grid-template-columns: 100px 100px;margin: auto auto 24px 10px;" class="grid grid-gap-10">
+            <button mat-raised-button color="primary" (click)="result()">Submit</button>
+            <button mat-raised-button *ngIf="!!data.length" [disabled]="!data.length">Download</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</form>
+  </form>
 
-<div id="pdfTable" #pdfTable>
-    <table class="box-s1">
-        <tr>
+  <div id="pdfTable" #pdfTable>
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" *ngIf="!!data.length"
+    (page)="body.page= $event.pageIndex;body.limit= $event.pageSize;result();">
+    </mat-paginator>
+    <table class="box-s1" *ngIf="!!data.length">
+      <tr>
         <th>SL</th>
-          <th>Date</th>
-          <th>Draw No</th>
-          <th>11:00 AM</th>
-          <th>01:00 PM</th>
-          <th>06:00 PM</th>
-          <th>08:00 PM</th>
-        </tr>
-        <tr *ngFor="let row of data;index as indexNo;">
-            <td>{{indexNo+1}}</td>
-          <td>{{row?.date | date :'mediumDate'}}</td>
-          <td>{{row?.draw}}</td>
-          <td>{{row['11_am']}}</td>
-          <td>{{row['1_pm']}}</td>
-          <td>{{row['6_pm']}}</td>
-          <td>{{row['8_pm']}}</td>
-        </tr>
-      </table>
-
-</div>
+        <th>Date</th>
+        <th>Draw No</th>
+        <th>11:00 AM</th>
+        <th>01:00 PM</th>
+        <th>06:00 PM</th>
+        <th>08:00 PM</th>
+      </tr>
+      <tr *ngFor="let row of data;index as indexNo;">
+        <td>{{indexNo+1}}</td>
+        <td>{{row?.date | date :'mediumDate'}}</td>
+        <td>{{row?.draw}}</td>
+        <td>{{row['11_am']}}</td>
+        <td>{{row['1_pm']}}</td>
+        <td>{{row['6_pm']}}</td>
+        <td>{{row['8_pm']}}</td>
+      </tr>
+    </table>
+    <div *ngIf="!data.length"></div>
+  </div>
 
 
 </div>

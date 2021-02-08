@@ -5,9 +5,9 @@
   <div class="pos-r">
     <img src="../../../assets/img/jackpoteditimg.png" class="img-c">
     <div class="f-w-600 flex pos-a win-no"  style="font-size: 110px;color:red;">
-        <div class="pad-20">7</div>
-        <div class="pad-20" style="padding-left: 25px;">7</div>
-        <div class="pad-20" style="padding-left: 35px;">7</div>
+        <div class="pad-20">{{a}}</div>
+        <div class="pad-20" style="padding-left: 25px;">{{b}}</div>
+        <div class="pad-20" style="padding-left: 35px;">{{c}}</div>
     </div>
   </div>
   <ng-container [ngTemplateOutlet]="header"></ng-container>
@@ -23,7 +23,7 @@
     <div class="flex align-c justify-space-between pos-a pad-25 font-20 f-w-500 white" style="top:65px;width: 75%;">
 <div>
     <div>Draw No</div>
-    <div class="pad-tb-20 font-40" style="color: #e79114;">297</div>
+    <div class="pad-tb-20 font-40" style="color: #e79114;">{{data?.draw}}</div>
 </div>
 <div>
     <div>Draw Date</div>
@@ -35,7 +35,7 @@
   <div class="pos-a" style="    top: 80px;
     right: 25px;">
     <div class="w-ball mar-10 pointer flex align-c justify-c f-w-500 font-20 {{selectedTime==item?'active-ball':''}}" 
-    *ngFor="let item of timeList" (click)="selectedTime=item">
+    *ngFor="let item of timeList" (click)="selectedTime=item;setValue(item)">
         <div>
       <div class="pad-tb-5">{{day}}</div>
       <div class="pad-tb-5">{{item}}</div>

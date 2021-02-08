@@ -43,12 +43,28 @@ export class HomeComponent implements OnInit {
       if (res.statusCode == 200) {
         if (!!res.info.length)
           this.data = res.info[0];
-          this.set(this.data['11_am']);
+          this.set(this.data['11_am'])
       }
     })
-    // this.data = { "11_am": "123", "1_pm": "332", "6_pm": "456", "8_pm": "876", "created_on": "2021-02-08 19:37:35.000000", "date": "2021-02-09", "draw": 123, "id": 3 };
-    // this.set(this.data['11_am']);
+    this.data = { "11_am": "123", "1_pm": "332", "6_pm": "456", "8_pm": "876", "created_on": "2021-02-08 19:37:35.000000", "date": "2021-02-09", "draw": 123, "id": 3 };
+  this.set(this.data['11_am']);
   }
+//   setAuto() {
+//     let t = moment(moment('2021-02-08 20:57:43').format('hh:mm:ss a'), "HH:mm:ss a");
+// console.log(t.isBefore(moment('11:00 am', "HH:mm:ss a")));
+//     if (t.isBefore(moment('11:00 am', "HH:mm:ss a"))) {
+//       this.set(this.data['11_am']);
+//     } else if (t.isBefore(moment('1:00 pm', "HH:mm:ss a"))) {
+//       this.set(this.data['1_pm']);
+//     } else if (t.isBefore(moment('6:00 pm', "HH:mm:ss a"))) {
+//       this.set(this.data['6_pm']);
+//     } else if (t.isBefore(moment('8:00 pm', "HH:mm:ss a"))) {
+//       this.set(this.data['1_pm']);
+//     }else{
+//       this.set(this.data['11_am']);
+//     }
+//   }
+
   setValue(item) {
     if (item == '11:00 AM') {
       this.set(this.data['11_am']);

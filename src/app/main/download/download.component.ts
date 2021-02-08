@@ -21,7 +21,7 @@ export class DownloadComponent implements OnInit {
     });
 
     this.campaignTwo = new FormGroup({
-      start: new FormControl(new Date(year, month,  new Date().getDate()-7)),
+      start: new FormControl(new Date(year, month,  new Date().getDate()-5)),
       end: new FormControl(new Date(year, month,new Date().getDate()))
     });
   }
@@ -29,5 +29,7 @@ export class DownloadComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
+submit(){
+  console.log(this.campaignOne,this.campaignTwo);
+}
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-us',
@@ -11,6 +12,12 @@ body={
   mail:'',
   comments:''
 }
+
+contactForm = new FormGroup({
+  name:new FormControl('', Validators.required),
+  email: new FormControl('', Validators.email),
+  comments: new FormControl('', Validators.required)
+});
   constructor() { }
 
   ngOnInit(): void {

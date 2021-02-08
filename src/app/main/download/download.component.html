@@ -15,8 +15,8 @@
           <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
         </mat-form-field>
         <div style="grid-template-columns: 100px 100px;margin: auto auto 24px 10px;" class="grid grid-gap-10">
-          <button mat-raised-button color="primary" (click)="submit()">Submit</button>
-          <button mat-raised-button *ngIf="!!data.length" [disabled]="!data.length" (click)="downloadAsPDF()">Download</button>
+          <button mat-raised-button color="primary" (click)="result()">Submit</button>
+          <button mat-raised-button *ngIf="!!data.length" [disabled]="!data.length" >Download</button>
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@
 </form>
 
 <div id="pdfTable" #pdfTable>
-    <table class="box-s1">
+    <table class="box-s1" *ngIf="!!data.length">
         <tr>
         <th>SL</th>
           <th>Date</th>
@@ -44,7 +44,7 @@
           <td>{{row['8_pm']}}</td>
         </tr>
       </table>
-
+<div *ngIf="!data.length" ></div>
 </div>
 
 

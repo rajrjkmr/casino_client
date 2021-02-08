@@ -1,4 +1,33 @@
-<div class="grid align-c justify-c g-r-max-max grid-gap-10" style="padding-top: 40px;">
-    <div class="font-20" style="color: var(--color-primary);">Contact Us:</div>
-    <a style="color:blue" class="font-20" href="mailto:yuvanesh2018s@gmail.com">yuvanesh2018s@gmail.com</a>
+
+<div style="    background-color: #ffffffe0;">
+<div class="flex pad-25">
+  <div>
+    <div class="font-18 pad-tb-20 f-w-500" style="color:var(--color-primary);">Contact Form</div>
+    <form [formGroup]="contactForm">
+    <mat-form-field class="example-form-field" appearance="fill" style="width: 70%;">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field" appearance="fill" style="width: 70%;">
+      <mat-label>Mail ID</mat-label>
+      <input matInput type="mail" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 70%;">
+      <mat-label>Comments</mat-label>
+      <textarea matInput formControlName="comments" style="min-height: 140px;max-height: 220px;" ></textarea>
+    </mat-form-field>
+    <div>
+      <button mat-raised-button color="primary" style="width: 70%;" [disabled]="!contactForm.valid">Submit</button>
+    </div>
+    </form>
+  </div>
+
+</div>
+
+<div class="pad-25">
+<div class="font-14" style="color: var(--color-primary);">Contact Us:</div>
+ <a style="color:blue" class="font-16" href="mailto:yuvanesh2018s@gmail.com">yuvanesh2018s@gmail.com</a>
+</div>
 </div>

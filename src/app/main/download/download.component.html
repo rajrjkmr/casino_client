@@ -1,4 +1,5 @@
 <div class="pad-20" style="min-height: 200px;background-color: #ffffffe0;">
+    <form [formGroup]="campaignTwo" novalidate>
   <div class="flex align-c justify-c">
     <div>
       <div class="font-20 pad-tb-20 flex justify-c" style="color: var(--color-primary);">Download Results</div>
@@ -13,10 +14,38 @@
           <mat-datepicker-toggle matSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
           <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
         </mat-form-field>
-        <div style="margin-left: 10px;margin-top: 10px;">
-          <button mat-raised-button color="primary">Submit</button>
+        <div style="grid-template-columns: 100px 100px;margin: auto auto 24px 10px;" class="grid grid-gap-10">
+          <button mat-raised-button color="primary" (click)="submit()">Submit</button>
+          <button mat-raised-button *ngIf="!!data.length" [disabled]="!data.length" (click)="downloadAsPDF()">Download</button>
         </div>
       </div>
     </div>
   </div>
+</form>
+
+<div id="pdfTable" #pdfTable>
+    <table class="box-s1">
+        <tr>
+        <th>SL</th>
+          <th>Date</th>
+          <th>Draw No</th>
+          <th>11:00 AM</th>
+          <th>01:00 PM</th>
+          <th>06:00 PM</th>
+          <th>08:00 PM</th>
+        </tr>
+        <tr *ngFor="let row of data;index as indexNo;">
+            <td>{{indexNo+1}}</td>
+          <td>{{row?.date | date :'mediumDate'}}</td>
+          <td>{{row?.draw}}</td>
+          <td>{{row['11_am']}}</td>
+          <td>{{row['1_pm']}}</td>
+          <td>{{row['6_pm']}}</td>
+          <td>{{row['8_pm']}}</td>
+        </tr>
+      </table>
+
+</div>
+
+
 </div>

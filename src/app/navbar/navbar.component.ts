@@ -28,9 +28,10 @@ export class NavbarComponent implements OnInit {
 
 
   setTime() {
-var then = "02/08/2021 4:20:30";
-
-      this.time =moment.utc(moment(then,"DD/MM/YYYY HH:mm:ss").diff(moment(moment(),"DD/MM/YYYY HH:mm:ss"))).format("HH:mm:ss")
+var startTime = moment("09:16:59 pm", "HH:mm:ss a");
+var endTime = moment(moment().format('hh:mm:ss a'), "HH:mm:ss a");
+var duration = moment.duration(startTime.diff(endTime));
+      this.time =[duration.get('hours'),duration.get('minutes'), duration.get('seconds')].join(':')
 
   }
 

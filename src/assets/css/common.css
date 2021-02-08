@@ -136,6 +136,10 @@
   padding: 20px;
   box-sizing: border-box;
 }
+.pad-25 {
+  padding: 25px;
+  box-sizing: border-box;
+}
 
 .pad-lr-5 {
   padding: 0px 5px;
@@ -396,6 +400,9 @@
 
 .font-25 {
   font-size: 25px;
+}
+.font-40 {
+  font-size: 40px;
 }
 
 .font-45 {

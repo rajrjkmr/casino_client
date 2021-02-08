@@ -16,7 +16,7 @@ const routes: Routes = [
     },
     {
         path: 'result',
-        component: ResultComponent,
+        component: DownloadComponent,
     },
    {
         path: 'download',

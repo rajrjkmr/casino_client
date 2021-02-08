@@ -1,1 +1,22 @@
-<p>download works!</p>
+<div class="pad-20" style="min-height: 200px;background-color: #ffffffe0;">
+  <div class="flex align-c justify-c">
+    <div>
+      <div class="font-20 pad-tb-20 flex justify-c" style="color: var(--color-primary);">Download Results</div>
+      <div class="flex ">
+        <mat-form-field class="width-100" appearance="fill">
+          <mat-label>Date Range</mat-label>
+          <mat-date-range-input [rangePicker]="campaignOnePicker" [comparisonStart]="campaignTwo.value.start"
+            [comparisonEnd]="campaignTwo.value.end">
+            <input matStartDate placeholder="Start date" formControlName="start" (focus)="campaignOnePicker.open()">
+            <input matEndDate placeholder="End date" formControlName="end" (focus)="campaignOnePicker.open()">
+          </mat-date-range-input>
+          <mat-datepicker-toggle matSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
+          <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+        </mat-form-field>
+        <div style="margin-left: 10px;margin-top: 10px;">
+          <button mat-raised-button color="primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

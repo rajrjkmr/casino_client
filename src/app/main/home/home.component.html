@@ -1,4 +1,42 @@
-<div class="mar-20" style=" background: #0b111d;;">
+<div class="mar-20 pos-r" style=" background: #0b111d;">
+  <div class="pad-10 pos-a width-100">
+    <div class="pad-10 font-20 f-w-600 bg-white" style="color: red;">GOLD {{day}} {{selectedTime}}</div>
+  </div>
+  <div class="pos-r">
+    <img src="../../../assets/img/jackpoteditimg.png" class="img-c">
+    <div class="f-w-600 flex pos-a win-no"  style="font-size: 110px;color:red;">
+        <div class="pad-20">7</div>
+        <div class="pad-20" style="padding-left: 25px;">7</div>
+        <div class="pad-20" style="padding-left: 35px;">7</div>
+    </div>
+  </div>
+  <ng-container [ngTemplateOutlet]="header"></ng-container>
+  <ng-container [ngTemplateOutlet]="selector"></ng-container>
 
-    <img src="../../../assets/img/jackpoteditimg.png" style="height: 680px;">
 </div>
+
+<ng-template #header>
+    <div class="flex align-c justify-space-between pos-a pad-25 font-20 f-w-500 white" style="top:65px;width: 75%;">
+<div>
+    <div>Draw No</div>
+    <div class="pad-tb-20 font-40" style="color: #e79114;">297</div>
+</div>
+<div>
+    <div>Draw Date</div>
+    <div class="pad-tb-20 font-40" style="color: #e79114;">{{todayDate}}</div>
+</div>
+</div>
+</ng-template>
+<ng-template #selector>
+  <div class="pos-a" style="    top: 80px;
+    right: 25px;">
+    <div class="w-ball mar-10 pointer flex align-c justify-c f-w-500 font-20 {{selectedTime==item?'active-ball':''}}" 
+    *ngFor="let item of timeList" (click)="selectedTime=item">
+        <div>
+      <div class="pad-tb-5">{{day}}</div>
+      <div class="pad-tb-5">{{item}}</div>
+    </div>
+    </div>
+
+  </div>
+</ng-template>

@@ -1,11 +1,11 @@
 
 .main{
-  background: #ffffff6e;
+  background: #ffffffa1;
   margin: auto;
-  margin: 50px auto auto auto;
+  margin: 30px auto auto auto;
   width: 1000px;
   border-radius: 13px 13px 13px 13px;
-  min-height: 400px;
+  min-height: 300px;
 }
 .header-title{
   font-family: 'Black Ops One', cursive;

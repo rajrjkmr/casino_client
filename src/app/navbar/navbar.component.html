@@ -1,16 +1,20 @@
 <div class="flex justify-c align-c width-100 height-100">
 <div class="main">
 <div class="header-title flex align-c justify-c">Kerala <span style="color: #373242;"> BIG</span></div>
-<div class="nav-bar flex align-c pad-5">
+<div class="nav-bar flex align-c pad-5 justify-space-between">
+  <div>
   <button mat-button color="primary" routerLink="/main/home" class="mar-r-10">Home</button>
   <button mat-button color="primary" routerLink="/main/result" class="mar-r-10">Result</button>
   <button mat-button color="primary" routerLink="/main/download" class="mar-r-10">Download</button>
   <button mat-button color="primary" routerLink="/main/contact-us" class="mar-r-10">Contact Us</button>
-
+</div>
+<div style="color:var(--color-primary);" class="f-w-500 pad-10">
+  <div class="font-14">Next Result In:</div> <div class="font-18">{{time}}</div>
+</div>
 </div>
 
-
+<div class="overflow-a" style="max-height: calc(100vh - 164px);;">
 <router-outlet></router-outlet>
-
+</div>
 </div>
 </div>

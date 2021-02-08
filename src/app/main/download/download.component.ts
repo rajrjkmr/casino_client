@@ -1,9 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
-import {jsPDF} from 'jspdf';
 
-import * as jspdf from 'jspdf';  
-import html2canvas from 'html2canvas'; 
 @Component({
   selector: 'app-download',
   templateUrl: './download.component.html',
@@ -48,10 +45,10 @@ export class DownloadComponent implements OnInit {
     {'date':'2021-02-01','draw':'123','11_am':'234','1_pm':'345','6_pm':'456','8_pm':'654'},
     {'date':'2021-02-03','draw':'123','11_am':'234','1_pm':'345','6_pm':'456','8_pm':'654'},
     {'date':'2021-02-02','draw':'123','11_am':'234','1_pm':'345','6_pm':'456','8_pm':'654'},
-    {'date':'2021-02-01','draw':'123','11_am':'234','1_pm':'345','6_pm':'456','8_pm':'654'},   
+    {'date':'2021-02-01','draw':'123','11_am':'234','1_pm':'345','6_pm':'456','8_pm':'654'},
      {'date':'2021-02-03','draw':'123','11_am':'234','1_pm':'345','6_pm':'456','8_pm':'654'},
     {'date':'2021-02-02','draw':'123','11_am':'234','1_pm':'345','6_pm':'456','8_pm':'654'},
-    {'date':'2021-02-01','draw':'123','11_am':'234','1_pm':'345','6_pm':'456','8_pm':'654'},   
+    {'date':'2021-02-01','draw':'123','11_am':'234','1_pm':'345','6_pm':'456','8_pm':'654'},
      {'date':'2021-02-03','draw':'123','11_am':'234','1_pm':'345','6_pm':'456','8_pm':'654'},
     {'date':'2021-02-02','draw':'123','11_am':'234','1_pm':'345','6_pm':'456','8_pm':'654'},
     {'date':'2021-02-01','draw':'123','11_am':'234','1_pm':'345','6_pm':'456','8_pm':'654'},

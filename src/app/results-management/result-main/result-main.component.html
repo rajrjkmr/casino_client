@@ -1,0 +1,96 @@
+<div class="res-c">
+  <div>
+    <div>
+      <div>
+        <div class="p-c">
+          <div></div>
+          <button mat-raised-button color="primary" (click)="openDialog(createTemp)">Create + </button>
+          <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"
+          (page)="getApi.page= $event.pageIndex;getApi.limit= $event.pageSize;getResults();">
+          </mat-paginator>
+        </div>
+      </div>
+      <div>
+        <!-- Pagenation -->
+        <div></div>
+        <!-- Table -->
+        <div>
+          <table class="tabl">
+            <tr>
+              <th class="res-th">S.No</th>
+              <th class="res-th">Date</th>
+              <th class="res-th">Draw</th>
+              <th class="res-th">11.00 AM</th>
+              <th class="res-th">01.00 PM</th>
+              <th class="res-th">06.00 PM</th>
+              <th class="res-th">08.00 PM</th>
+            </tr>
+            <tr *ngFor="let item of data;index as indexNo;">
+              <td class="res-th">{{indexNo+1}}</td>
+              <td class="res-th">{{item.date | date}}</td>
+              <td class="res-th">{{item.draw}}</td>
+              <!-- <td class="res-th">{{item['11_am']}}</td> -->
+              <td class="res-td"> <input class="res-in-td" [(ngModel)]="item['11_am']" (change)="updateResults(item)"> </td>
+              <td class="res-td"><input class="res-in-td" [(ngModel)]="item['1_pm']" (change)="updateResults(item)"></td>
+              <td class="res-td"><input class="res-in-td" [(ngModel)]="item['6_pm']" (change)="updateResults(item)"></td>
+              <td class="res-td"><input class="res-in-td" [(ngModel)]="item['8_pm']" (change)="updateResults(item)"></td>
+
+
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #createTemp>
+  <div class="m-c">
+    <div class="header">
+      <div>Create New One</div>
+      <div>
+        <button (click)="this.dialogRef.close()" mat-icon-button>
+          <mat-icon>clear</mat-icon>
+        </button>
+      </div>
+    </div>
+    <!-- Content -->
+    <div class="main-form-c">
+      <div class="input-con">
+        <mat-label>Choose a date</mat-label>
+        <input [matDatepicker]="picker" [(ngModel)]="body.date" class="input-b-c" (click)="picker.open()">
+        <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> -->
+        <mat-datepicker #picker></mat-datepicker>
+      </div>
+
+      <div class="input-con">
+        <mat-label>10.00 AM</mat-label>
+        <input type="number" class="input-b-c" [(ngModel)]="body.one">
+      </div>
+
+      <div class="input-con">
+        <mat-label>01.00 PM</mat-label>
+        <input type="number" class="input-b-c" [(ngModel)]="body.two">
+      </div>
+
+      <div class="input-con">
+        <mat-label>06.00 PM</mat-label>
+        <input type="number" class="input-b-c" [(ngModel)]="body.three">
+      </div>
+
+
+      <div class="input-con">
+        <mat-label>08.00 PM</mat-label>
+        <input type="number" class="input-b-c" [(ngModel)]="body.four">
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <button mat-raised-button (click)="this.dialogRef.close()">Cancel</button>
+      <button mat-raised-button color="primary" (click)="save()">Save</button>
+    </div>
+  </div>
+
+</ng-template>

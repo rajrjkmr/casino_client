@@ -37,6 +37,7 @@ export class TokenInterceptor implements HttpInterceptor {
       } else {
         // Only for login time
         if (request.url.includes('login') || request.url.includes('otp_callback')) {
+
           request = request.clone({
             setHeaders: {
               'current-time': moment().format('YYYY-MM-DD HH:mm:ss'),

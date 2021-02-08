@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
         this.isSubmiting = false;
         if (res.statusCode === 200, !!res.info && !!res.info.login_status) {
           localStorage.setItem('user', JSON.stringify({}));
-          localStorage.setItem('x-token', res.token);
+          localStorage.setItem('x-token', res.info.token);
 
         } else {
           this.emailErrorCallback = res.info.message;

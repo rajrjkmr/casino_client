@@ -24,6 +24,28 @@ export class ApiService {
     const requestUrl = this.baseUrl + 'login/';
     return this.http.post(requestUrl, body).pipe(map(this.extractData));
   }
+
+  getResults(body): Observable<any> {
+    const params = new HttpParams()
+      .set('start', body.start)
+      .set('end', body.end)
+      .set('page', body.page)
+      .set('limit', body.limit);
+    const requestUrl = this.baseUrl + '/result/';
+    return this.http.get(requestUrl, { params }).pipe(map(this.extractData));
+  }
+
+  createResults(body): Observable<any> {
+    const requestUrl = this.baseUrl + 'result/';
+    return this.http.post(requestUrl, body).pipe(map(this.extractData));
+  }
+
+  updateResults(body): Observable<any> {
+    const requestUrl = this.baseUrl + 'result/';
+    return this.http.put(requestUrl, body).pipe(map(this.extractData));
+  }
+
+
   // // Forget password
   // forgetPassword(body): Observable<any> {
   //   const requestUrl = this.baseUrl + '/forget/';

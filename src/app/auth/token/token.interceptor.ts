@@ -18,15 +18,9 @@ export class TokenInterceptor implements HttpInterceptor {
     } else if (request.method === 'POST') {
       request = request.clone({
 
-        // body: {
-        //     ...request.body, createdOn: moment().format("YYYY-MM-DD HH:mm:ss"),
-        //     lastModified: moment().format("YYYY-MM-DD HH:mm:ss")
-        // },
       });
     } else if (request.method === 'PUT') {
-      // request = request.clone({
-      //     body: { ...request.body, lastModified: moment().format("YYYY-MM-DD HH:mm:ss") },
-      // });
+
     }
 
     // add authorization header with jwt token if available
@@ -61,17 +55,4 @@ export class TokenInterceptor implements HttpInterceptor {
       }
   }
 
-  userInit() {
-    const token = this.activeRoute.snapshot.queryParams['key'];
-    // Check token key present or not
-    if (!!token) {
-      this.apiService.getUserByToken(token).subscribe(res => {
-        if (res.statusCode === 200 && !!res.info && !!res.info.id) {
-          localStorage.setItem('user', JSON.stringify(res.info));
-          localStorage.setItem('x-token', token);
-          this.route.navigate(['/main/chat/empty']);
-        }
-      });
-    }
-  }
 }

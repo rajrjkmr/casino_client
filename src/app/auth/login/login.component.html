@@ -4,83 +4,18 @@
       <mat-progress-bar class="example-margin" color="primary" mode="indeterminate" *ngIf="isResending || isSubmiting || isVerfying">
       </mat-progress-bar>
       <div *ngIf="isNewDevice else loginTemplate">
-        <ng-container [ngTemplateOutlet]="otpTemplate"></ng-container>
       </div>
     </div>
   </div>
   <div style="position: absolute;bottom:1.5rem;width: 100%;display: grid;justify-items: center;">
     <div style="width: 15rem;height: 1px;margin-bottom: 6px;background: #efeff0;"></div>
-    <span class="sub-c font-12">Powered By</span>
-    <div class="head-c f-w-500"> Airlift Tech Team</div>
   </div>
 </div>
-<ng-template #otpTemplate>
-
-  <div class="pad-20">
-    <form class="pad-10-20">
-      <p class="head-c f-w-500 font-18">Email Verification</p>
-      <p>Please confirm your account by entering the
-        verification code sent to <span class="head-c">{{loginFormGroup.value.email}}</span>.</p>
-
-      <!-- <div class="flex align-c justify-c">
-            <img  src="https://api.myairliftusa.com/uploads/lock_with_email.png"
-              style="height: 170px;">
-          </div> -->
-
-
-      <div class="code-input-c" class="{{!!invalidOtp?'shake':''}}">
-        <input [(ngModel)]="otpValue[0]" name="1" (click)="onClick($event)"
-          class="code-input {{invalidOtp ?'invalid-otp':''}}" type="text" (keyup)="keyType($event)" autofocus
-          required />
-        <input [(ngModel)]="otpValue[1]" name="2" (click)="onClick($event)"
-          class="code-input {{invalidOtp ?'invalid-otp':''}}" type="text" (keyup)="keyType($event)" required />
-        <input [(ngModel)]="otpValue[2]" name="3" (click)="onClick($event)"
-          class="code-input {{invalidOtp ?'invalid-otp':''}}" type="text" (keyup)="keyType($event)" required />
-        <input [(ngModel)]="otpValue[3]" name="4" (click)="onClick($event)"
-          class="code-input {{invalidOtp ?'invalid-otp':''}}" type="text" (keyup)="keyType($event)" required />
-        <input [(ngModel)]="otpValue[4]" name="5" (click)="onClick($event)"
-          class="code-input {{invalidOtp ?'invalid-otp':''}}" type="text" (keyup)="keyType($event)" required />
-        <input [(ngModel)]="otpValue[5]" name="6" (click)="onClick($event)"
-          class="code-input {{invalidOtp ?'invalid-otp':''}}" type="text" (keyup)="keyType($event)" required />
-      </div>
-      <!-- Incorrect OTP -->
-      <div class="error-span" *ngIf="invalidOtp">Incorrect OTP. Please try again</div>
-      <!-- Save device -->
-      <div style="padding: 16px 5px;box-sizing: border-box;">
-        <mat-checkbox (change)="otpApiBody.save_device=$event.checked" color="primary">This is a trusted
-          device, don’t ask again.</mat-checkbox>
-      </div>
-      <!-- Verification button -->
-      <div class="flex align-c" style="justify-content: center;">
-        <button style="line-height: 42px;" class="width-100" (click)="verify();" [disabled]="otpValue.join('').length<6"
-          mat-raised-button color="primary">Verify <mat-icon>east</mat-icon> </button>
-        <div class="loading-new-spin"></div>
-      </div>
-    </form>
-    <ul class="font-14 sub-c" style="margin: 0px;">
-      <li>
-        <!-- Resend -->
-        <div class="d-c">
-          Havent received the code yet
-          <button [disabled]="(otpExpTime!=0)" mat-button color="primary" (click)="reSend()" class="re-send-btn"
-            style="padding: 0px;">Resend</button>
-          {{otpExpTime ? otpExpTime+'s':''}}
-          <div style="margin-left: 10px;" class="loading-new-spin re-load"></div>
-        </div>
-      </li>
-
-    </ul>
-
-  </div>
-
-</ng-template>
 
 <ng-template #loginTemplate>
   <div class="pad-20">
     <div style="text-align: center;">
-      <img src="https://crm.myairliftusa.com/assets/img/logo.png" height="40px">
     </div>
-    <p class="head-c f-w-500 font-16 mar-10" style="text-align: center;">Sign In to our Airlift Chat App</p>
     <form [formGroup]="loginFormGroup">
       <div class="pad-10-20"><input placeholder="Email Address" class="{{!!emailErrorCallback?'shake':''}} width-100"
           type="email" formControlName="email"></div>
@@ -106,12 +41,9 @@
     <div
       style="display: grid;grid-template-columns: 1fr auto 1fr;grid-column-gap: 5px;align-items: center;padding: 10px 20px; box-sizing: border-box;">
       <div style="height: 1px;background: #dedede;"></div>
-      <div class="font-12 head-c"> or SignIn Into Airlift CRM</div>
       <div style="height: 1px;background: #dedede;"></div>
     </div>
     <div class="pad-10-20">
-      <button mat-stroked-button color="primary" class="width-100" style="line-height: 42px;"
-        (click)="openCRM()">Airlift CRM</button>
     </div>
   </div>
 </ng-template>

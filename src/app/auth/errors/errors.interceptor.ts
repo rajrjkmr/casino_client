@@ -25,7 +25,7 @@ export class ErrorsInterceptor implements HttpInterceptor {
       if (err.status >= 500) {
         // this.toastService.error('Contact Our Support Team..');
       }
-
+      console.log(err.error)
       const error = err.error.message || err.statusText;
       return throwError(error);
     }));

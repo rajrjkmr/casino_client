@@ -46,8 +46,8 @@ export class HomeComponent implements OnInit {
           this.set(this.data['11_am']);
       }
     })
-    this.data = { "11_am": "123", "1_pm": "332", "6_pm": "456", "8_pm": "876", "created_on": "2021-02-08 19:37:35.000000", "date": "2021-02-09", "draw": 123, "id": 3 };
-    this.set(this.data['11_am']);
+    // this.data = { "11_am": "123", "1_pm": "332", "6_pm": "456", "8_pm": "876", "created_on": "2021-02-08 19:37:35.000000", "date": "2021-02-09", "draw": 123, "id": 3 };
+    // this.set(this.data['11_am']);
   }
   setValue(item) {
     if (item == '11:00 AM') {

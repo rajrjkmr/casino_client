@@ -24,7 +24,7 @@
   </form>
 
   <div id="pdfTable" #pdfTable>
-    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" *ngIf="!!data.length"
     (page)="body.page= $event.pageIndex;body.limit= $event.pageSize;result();">
     </mat-paginator>
     <table class="box-s1" *ngIf="!!data.length">

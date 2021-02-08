@@ -1,0 +1,28 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+// $my-app-primary: mat-palette($mat-indigo, 500);
+$my-app-primary: mat-palette($mat-cyan, 800);
+
+$my-app-accent: mat-palette($mat-pink, 500, 900, A100);
+$my-app-warn: mat-palette($mat-deep-orange);
+$my-app-success: mat-palette($mat-green, A700);
+
+$my-app-link: mat-palette($mat-blue, 600);
+
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-success, $my-app-warn);
+@include angular-material-theme($my-app-theme);
+$primary: map-get($my-app-theme, primary);
+$accent: map-get($my-app-theme, accent);
+
+:root {
+  --color-primary: #{mat-color($my-app-primary)};
+  --color-accent: #{mat-color($my-app-accent)};
+  --color-warn: #{mat-color($my-app-warn)};
+  --color-success: #{mat-color($my-app-success)};
+  --color-link: #{mat-color($my-app-link)};
+  --color-bg: #fafafa;
+
+}
+
+

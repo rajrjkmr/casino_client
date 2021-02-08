@@ -19,20 +19,20 @@ export class DownloadComponent implements OnInit {
     const year = today.getFullYear();
 
     this.campaignOne = new FormGroup({
-      start: new FormControl(new Date(year, month, 13),Validators.required),
-      end: new FormControl(new Date(year, month, 16),Validators.required)
+      start: new FormControl(new Date(year, month, 13), Validators.required),
+      end: new FormControl(new Date(year, month, 16), Validators.required)
     });
 
     this.campaignTwo = new FormGroup({
-      start: new FormControl(new Date(year, month, new Date().getDate()),Validators.required),
-      end: new FormControl(new Date(year, month, new Date().getDate()),Validators.required)
+      start: new FormControl(new Date(year, month, new Date().getDate()), Validators.required),
+      end: new FormControl(new Date(year, month, new Date().getDate()), Validators.required)
     });
   }
-  body={
-    page:0,
-    limit:100,
-    start:'',
-    end:''
+  body = {
+    page: 0,
+    limit: 100,
+    start: '',
+    end: ''
   };
   data = [];
   ngOnInit(): void {
@@ -44,8 +44,8 @@ export class DownloadComponent implements OnInit {
 
   result() {
     Object.assign(this.body, this.campaignTwo.value);
-    this.body['start']=moment(this.campaignTwo.value['start']).format('MM/DD/YYYY')
-    this.body['end']=moment(this.campaignTwo.value['end']).format('MM/DD/YYYY')
+    this.body['start'] = moment(this.campaignTwo.value['start']).format('MM/DD/YYYY')
+    this.body['end'] = moment(this.campaignTwo.value['end']).format('MM/DD/YYYY')
 
     this.apiService.getResults(this.body).subscribe(res => {
       if (res.statusCode == 200) {

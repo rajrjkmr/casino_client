@@ -1,0 +1,536 @@
+/* Its contain common  class
+            -- by Rajkumar K -- 01/10/2020 --
+*/
+.btn {
+  font-weight: 400;
+  /* line-height: 34px; */
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 8px 16px;
+}
+
+.btn-sec {
+  color: var(--color-head);
+  border: 1px solid #38435f3b;
+}
+
+.btn-pri {
+  background: var(--color-link);
+  color: #fff;
+  border: 1px solid;
+}
+
+.btn-len {
+  padding: 8px 30px;
+}
+
+
+
+.mat-btn {
+  padding: 0px 10px !important;
+  border: 1px solid #2f3a463d !important;
+  line-height: 34px !important;
+}
+
+.user-cir {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-d-c {
+  flex-direction: column;
+}
+
+.align-c {
+  align-items: center;
+  align-content: center;
+}
+
+.justify-c {
+  justify-items: center;
+  justify-content: center;
+}
+
+.justify-l {
+  justify-items: flex-start;
+  justify-content: flex-start;
+
+}
+
+.justify-r {
+  justify-items: flex-end;
+  justify-content: flex-end;
+
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-50-50 {
+  grid-template-columns: 50% 50%;
+}
+
+
+.grid-gap-5 {
+  grid-gap: 5px;
+}
+
+.grid-gap-10 {
+  grid-gap: 10px;
+}
+
+.grid-gap-20 {
+  grid-gap: 20px;
+}
+
+.grid-gap-40 {
+  grid-gap: 40px;
+}
+
+
+.pointer {
+  cursor: pointer;
+  user-select: none;
+}
+
+.un-select {
+  user-select: none;
+}
+
+.un-select-all {
+  user-select: all;
+}
+
+/* Padding based class */
+.p-l-10 {
+  padding-left: 10px;
+}
+
+.pad-10 {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.pad-5 {
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.pad-16 {
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.pad-20 {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.pad-lr-5 {
+  padding: 0px 5px;
+  box-sizing: border-box;
+}
+
+.pad-lr-10 {
+  padding: 0px 10px;
+  box-sizing: border-box;
+}
+
+.pad-lr-16 {
+  padding: 0px 16px;
+  box-sizing: border-box;
+}
+
+.pad-lr-20 {
+  padding: 0px 20px;
+  box-sizing: border-box;
+}
+
+.pad-lr-40 {
+  padding: 0px 40px;
+  box-sizing: border-box;
+}
+
+
+
+.pad-r-10 {
+  padding-right: 10px;
+}
+
+.pad-tb-5 {
+  padding: 5px 0px !important;
+  box-sizing: border-box;
+}
+
+.pad-tb-10 {
+  padding: 10px 0px;
+  box-sizing: border-box;
+}
+
+.pad-tb-16 {
+  padding: 16px 0px;
+  box-sizing: border-box;
+}
+
+.pad-tb-20 {
+  padding: 20px 0px;
+  box-sizing: border-box;
+}
+
+.pad-b-0 {
+  padding-bottom: 0;
+}
+
+.pad-b-10 {
+  padding-bottom: 10px;
+}
+
+.pad-b-40 {
+  padding-bottom: 40px;
+}
+
+.pad-b-20 {
+  padding-bottom: 20px;
+}
+
+
+
+
+.pad-t-0 {
+  padding-top: 0;
+}
+
+.pad-t-5 {
+  padding-top: 5px;
+}
+
+.pad-t-10 {
+  padding-top: 10px;
+}
+
+
+/* Margin based class */
+
+.mar-0 {
+  margin: 0px !important;
+}
+
+.mar-10 {
+  margin: 10px !important;
+}
+
+.mar-5 {
+  margin: 10px;
+}
+
+.mar-16 {
+  margin: 10px;
+}
+
+.mar-20 {
+  margin: 20px;
+}
+
+.mar-r-5 {
+  margin-right: 5px;
+}
+
+.mar-r-10 {
+  margin-right: 10px  !important;
+}
+
+.mar-lr-5 {
+  margin: 0px 5px !important;
+}
+
+.mar-lr-10 {
+  margin: 0px 10px !important;
+}
+
+.mar-lr-16 {
+  margin: 0px 16px;
+}
+
+.mar-lr-20 {
+  margin: 0px 20px;
+}
+
+.mar-tb-5 {
+  margin: 5px 0px !important;
+}
+
+.mar-tb-10 {
+  margin: 10px 0px;
+}
+
+.mar-tb-16 {
+  margin: 16px 0px;
+}
+
+.mar-tb-20 {
+  margin: 20px 0px;
+}
+
+.mar-lr-20 {
+  margin-top: 0px;
+}
+
+.mar-t-0 {
+  margin-top: 0px;
+}
+
+
+.mar-t-10 {
+  margin-top: 10px;
+}
+
+.mar-b-5 {
+  margin-bottom: 5px;
+}
+
+.mar-b-10 {
+  margin-bottom: 10px;
+}
+
+.mar-b-20 {
+  margin-bottom: 20px;
+}
+
+
+/* Icon based  */
+.icon-30 {
+  font-size: 30px !important;
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.icon-20 {
+  font-size: 20px !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+.icon-18{
+  font-size: 18px !important;
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.icon-16 {
+  font-size: 16px !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.icon-14 {
+  font-size: 14px !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+
+
+/* Width */
+.width-100 {
+  width: 100% !important;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.width-500 {
+  width: 500px;
+}
+
+.width-450 {
+  width: 450px;
+}
+
+/* Height based class */
+.height-100 {
+  height: 100%;
+}
+
+.min-height {
+  min-height: 40px;
+}
+
+/* Font size */
+.font-8 {
+  font-size: 8px;
+}
+
+.font-10 {
+  font-size: 10px;
+}
+
+.font-12 {
+  font-size: 12px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-25 {
+  font-size: 25px;
+}
+
+.font-45 {
+  font-size: 45px;
+}
+
+.f-w-500 {
+  font-weight: 500;
+}
+
+.f-w-600 {
+  font-weight: 600;
+}
+
+.line-h {
+  line-height: normal;
+}
+
+/* will chamge */
+.chip {
+  border: 1px solid var(--color-primary-opacity-25);
+  width: max-content;
+  padding: 2px 5px;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+  margin-top: 3px;
+  line-height: 12px;
+}
+
+.border {
+  border: 1px solid !important;
+}
+
+.border-n {
+  border: none;
+}
+
+.border-b {
+  border-bottom: 1px solid;
+}
+
+.border-t {
+  border-top: 1px solid;
+}
+
+
+.border-r-4 {
+  border-radius: 4px;
+}
+
+.border-r-50 {
+  border-radius: 50%;
+}
+
+/* Input based */
+.input {
+  background: transparent;
+  border: 1px solid;
+  border-radius: 2px;
+}
+
+.ship-icon {
+  fill: var(--color-primary);
+}
+
+.bg-primry {
+  background-color: var(--color-primary) !important;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.link {
+  color: rgb(44, 92, 197);
+}
+
+/* Text */
+.text-a-c {
+  text-align: center;
+}
+
+.text-a-r {
+  text-align: right;
+}
+
+/* Table based  */
+.table {
+  width: 100%;
+}
+
+.th {
+  padding: 5px 14px !important;
+  white-space: nowrap;
+  border: .1px solid #cdd0d333;
+}
+
+.td {
+  padding: 5px 14px !important;
+  font-size: 12px;
+  color: var(--color-head) !important;
+  border: .1px solid #cdd0d333;
+}
+
+.overflow-a {
+  overflow: auto;
+}
+
+.overflow-h {
+  overflow: hidden;
+}
+
+.overflow-e{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.img-50 {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+/* Position based */
+.pos-r {
+  position: relative;
+}
+
+.pos-a {
+  position: absolute;
+}
+
+.line-16 {
+  line-height: 16px;
+}
+

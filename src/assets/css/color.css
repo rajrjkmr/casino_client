@@ -1,0 +1,107 @@
+/* Its contain colors class
+            -- by Rajkumar K -- 01/10/2020 --
+*/
+.head-c {
+  color: #2f3a57f2;
+}
+
+
+
+.sub-c {
+  color: #394460cc;
+}
+
+.white {
+  color: #fff;
+}
+
+.primary-c {
+  color: var(--color-primary) !important;
+}
+
+.link-c {
+  color: var(--color-link) !important;
+}
+
+
+.warn-c {
+  color: var(--color-warn);
+}
+
+.warn-bg {
+  background: #fb57222e;
+}
+
+.success-c {
+  color: var(--color-success);
+}
+
+.primary-bg {
+  color: var(--color-primary);
+}
+
+.bg-default {
+  background: #46505a1a;
+}
+
+.bg-white {
+  background: #fff;
+}
+
+.bg-primary {
+  background: var(--color-primary) !important;
+}
+
+.bg-success {
+  background: var(--color-success);
+}
+
+.border-c {
+  border-color: #2f3a463d !important;
+}
+
+
+
+
+.box-s2 {
+  box-shadow: 0px 2px 30px #ccc6;
+}
+
+.box-s1 {
+  box-shadow: 0px 2px 5px rgba(224, 227, 231, 0.7);
+}
+
+.input-bg {
+  background: #37474f19;
+}
+
+
+/* COlor */
+
+.color-c1 {
+  color: var(--color-primary);
+}
+
+.color-c2 {
+  color: #029d00 !important;
+}
+
+.color-c3 {
+  color: #9bb12e !important;
+}
+
+.color-c4 {
+  color: #e542a3 !important;
+}
+
+.color-c5 {
+  color: #ffa97a !important;
+}
+
+.color-c6 {
+  color: var(--color-warn);
+}
+
+.color-blue {
+  color: #3987f6;
+}

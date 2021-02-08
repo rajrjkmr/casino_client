@@ -12,8 +12,12 @@
   </div>
   <ng-container [ngTemplateOutlet]="header"></ng-container>
   <ng-container [ngTemplateOutlet]="selector"></ng-container>
-
+  <ng-container [ngTemplateOutlet]="bottom"></ng-container>
 </div>
+
+<ng-template #bottom>
+    <div class="header-title flex align-c justify-c pos-a" style="bottom: 75px;left: 27%;">Kerala BIG</div>
+</ng-template>
 
 <ng-template #header>
     <div class="flex align-c justify-space-between pos-a pad-25 font-20 f-w-500 white" style="top:65px;width: 75%;">

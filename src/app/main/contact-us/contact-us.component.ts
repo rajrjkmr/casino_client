@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent implements OnInit {
-
+body={
+  name:'',
+  mail:'',
+  comments:''
+}
   constructor() { }
 
   ngOnInit(): void {

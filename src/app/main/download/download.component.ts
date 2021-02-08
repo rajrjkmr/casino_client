@@ -21,10 +21,11 @@ export class DownloadComponent implements OnInit {
     });
 
     this.campaignTwo = new FormGroup({
-      start: new FormControl(new Date(year, month, 15)),
-      end: new FormControl(new Date(year, month, 19))
+      start: new FormControl(new Date(year, month,  new Date().getDate()-7)),
+      end: new FormControl(new Date(year, month,new Date().getDate()))
     });
   }
+  data=[];
   ngOnInit(): void {
 
   }

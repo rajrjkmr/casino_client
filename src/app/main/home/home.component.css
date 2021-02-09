@@ -1,28 +1,68 @@
-.w-ball{
-    height: 145px;
-    width: 145px;
-    border-radius: 50%;
-    background: #ffff;
-    background-image: linear-gradient(#eaeaea, #656565);
+.tab-list {
+  border-bottom: 1px solid #d0caca;
+}
 
+.tab-item {
+  padding: 10px 80px;
+  width: max-content;
+  /* border-bottom: 3px solid var(--color-primary); */
 }
-.active-ball{
-    background-image: linear-gradient(#e58c0b, #fccd52);
-    color: #fff;
+
+.active-tab {
+  border-bottom: 3px solid var(--color-primary);
+  color: var(--color-primary);
 }
-.img-c{
-    margin: 135px 54px 71px 30px;
+
+.g-c-a-max {
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.g-c-5-10-50 {
+  grid-template-columns: calc(50% - 10px) 10px calc(50% - 10px);
+}
+
+.g-c-max-max-max {
+  grid-template-columns: max-content max-content max-content;
+}
+
+.he {
+  margin: 12px 0px;
+  background: #dcdcdc;
+  background-image: linear-gradient(to bottom right, #ffffff, #c7c7c7);
+}
+
+.d1 {
     box-sizing: border-box;
-    height: 600px;
-}
-.win-no{
-    top: 433px;
-    left: 202px;
+    background: #f4ae36;
+    height: 77px;
+    line-height: 77px;
+    width: 54px;
+    color: #cc1413;
+    background: linear-gradient(to bottom right, #ffffff, #525252);
 }
 
-.header-title{
-    font-family: 'Black Ops One', cursive;
-      font-size: 60px;
-      height: 70px;
-      color: #ffff;
-  }
+.d2 {
+    padding: 10px;
+    box-sizing: border-box;
+    background: #762d0fe8;
+    height: 75px;
+    line-height: 72px;
+    width: 54px;
+    align-self: center;
+    margin-left: 25px;
+    color: #cc1212;
+    background-image: linear-gradient(to bottom right, #ffffff, #525252);
+}
+
+.d3 {
+  padding: 10px;
+  box-sizing: border-box;
+  background: #762d0fe8;
+  height: 84px;
+  line-height: 72px;
+  width: 62px;
+  margin-left: 27px;
+  color: #cc1212;
+  background-image: linear-gradient(to bottom right, #ffffff, #525252);
+  ;
+}

@@ -11,20 +11,23 @@ export class HomeComponent implements OnInit {
   day = ''
   todayDate = ''
   selectedTime = '11:00 AM'
+  selected:any;
   timeList = [
-    '11:00 AM',
-    '01:00 PM',
-    '06:00 PM',
-    '08:00 PM'
+    {'d_name':'11:00 AM','name':'11_am'},
+    {'d_name':'01:00 PM','name':'1_pm'},
+    {'d_name':'06:00 PM','name':'6_pm'},
+    {'d_name':'08:00 PM','name':'8_pm'},
   ]
   body: any;
   data: any;
   a = ''
   b = ''
   c = ''
+
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+    this.selected=this.timeList[0];
     this.day = moment().format('dddd');
     this.todayDate = moment().format('ll');
     this.result();
@@ -49,21 +52,6 @@ export class HomeComponent implements OnInit {
     this.data = { "11_am": "123", "1_pm": "332", "6_pm": "456", "8_pm": "876", "created_on": "2021-02-08 19:37:35.000000", "date": "2021-02-09", "draw": 123, "id": 3 };
     this.set(this.data['11_am']);
   }
-  //   setAuto() {
-  //     let t = moment(moment('2021-02-08 20:57:43').format('hh:mm:ss a'), "HH:mm:ss a");
-  // console.log(t.isBefore(moment('11:00 am', "HH:mm:ss a")));
-  //     if (t.isBefore(moment('11:00 am', "HH:mm:ss a"))) {
-  //       this.set(this.data['11_am']);
-  //     } else if (t.isBefore(moment('1:00 pm', "HH:mm:ss a"))) {
-  //       this.set(this.data['1_pm']);
-  //     } else if (t.isBefore(moment('6:00 pm', "HH:mm:ss a"))) {
-  //       this.set(this.data['6_pm']);
-  //     } else if (t.isBefore(moment('8:00 pm', "HH:mm:ss a"))) {
-  //       this.set(this.data['1_pm']);
-  //     }else{
-  //       this.set(this.data['11_am']);
-  //     }
-  //   }
 
   setValue(item) {
     if (item == '11:00 AM') {

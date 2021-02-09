@@ -7,9 +7,20 @@
 
 <div>
   <div class="box-s1 pad-10 f-w-500 font-20 flex align-c justify-c he" >GOLD {{day}} {{selected['d_name']}}</div>
+<div class="flex justify-space-between" style="width: 90%;padding: 20px;">
+  <div style="padding-left: 83px;">
+    <div class="font-20 pad-tb-10">Draw No</div>
+    <div class="font-35 f-w-500" style="line-height: 40px;    color: #cc1413;">{{data?.draw}}</div>
+  </div>
+  <div style="padding-right: 20px;">
+    <div class="font-20 pad-tb-10">Draw Date</div>
+    <div class="font-35 f-w-500" style="line-height: 40px;    color: #cc1413;">{{todayDate}}</div>
+  </div>
+</div>
+
 <div class="pos-r flex justify-c">
-<img src="../../../assets/img/slot.png">
-<div class="pos-a flex" style="top: 223px;left: 329px;font-size: 58px;font-family: 'Alfa Slab One', cursive;">
+<img src="../../../assets/img/slot.png" width='450px'>
+<div class="pos-a flex" style="top: 200px;left: 342px;font-size: 58px;font-family: 'Alfa Slab One', cursive;">
   <div class="pad-10 flex align-c justify-c d1">{{a}}</div>
   <div class="pad-10 flex align-c justify-c d2">{{b}}</div>
   <div class="pad-10 flex align-c justify-c d2">{{c}}</div>

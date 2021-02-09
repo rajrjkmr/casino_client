@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
   isSubmiting: boolean = false;
   isVerfying: boolean = false;
   isResending: boolean = false;
+
   constructor(
     private router: Router,
     private snackBar: MatSnackBar,
@@ -67,6 +68,7 @@ export class LoginComponent implements OnInit {
         if (res.statusCode === 200, !!res.info && !!res.info.login_status) {
           localStorage.setItem('user', JSON.stringify({}));
           localStorage.setItem('x-token', res.info.token);
+          this.router.navigate(['results']);
 
         } else {
           this.emailErrorCallback = res.info.message;

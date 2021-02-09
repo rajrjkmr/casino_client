@@ -24,18 +24,20 @@ export class DownloadComponent implements OnInit {
     });
 
     this.campaignTwo = new FormGroup({
-      start: new FormControl(new Date(year, month, new Date().getDate()), Validators.required),
-      end: new FormControl(new Date(year, month, new Date().getDate()), Validators.required)
+      start: new FormControl(new Date(year, month, new Date(moment().format("YYYY-MM-01")).getDate()), Validators.required),
+      end: new FormControl(new Date(year, month, new Date(moment().format("YYYY-MM-") + moment().daysInMonth()).getDate()), Validators.required)
     });
   }
   body = {
     page: 0,
     limit: 100,
     start: '',
-    end: ''
+    end: '',
+    sort: 'ASC'
   };
   data = [];
   ngOnInit(): void {
+    this.result();
 
   }
   submit() {
@@ -43,9 +45,10 @@ export class DownloadComponent implements OnInit {
   }
 
   result() {
+    console.log();
     Object.assign(this.body, this.campaignTwo.value);
-    this.body['start'] = moment(this.campaignTwo.value['start']).format('MM/DD/YYYY')
-    this.body['end'] = moment(this.campaignTwo.value['end']).format('MM/DD/YYYY')
+    this.body['start'] = moment(this.campaignTwo.value['start']).format('YYYY-MM-DD');
+    this.body['end'] = moment(this.campaignTwo.value['end']).format('YYYY-MM-DD');
 
     this.apiService.getResults(this.body).subscribe(res => {
       if (res.statusCode == 200) {

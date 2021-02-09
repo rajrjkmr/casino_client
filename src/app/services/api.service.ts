@@ -30,6 +30,7 @@ export class ApiService {
       .set('start', body.start)
       .set('end', body.end)
       .set('page', body.page)
+      .set('sort',body.sort)
       .set('limit', body.limit);
     const requestUrl = this.baseUrl + '/result/';
     return this.http.get(requestUrl, { params }).pipe(map(this.extractData));

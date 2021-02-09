@@ -3,10 +3,25 @@
     <div>
       <div>
         <div class="p-c">
+          <div>
+            <mat-form-field class="width-100" appearance="fill">
+              <mat-label>Date Range</mat-label>
+              <mat-date-range-input [rangePicker]="campaignOnePicker" [comparisonStart]="startDate"
+                [comparisonEnd]="endDate">
+                <input matStartDate placeholder="Start date" [(ngModel)]="startDate"
+                  (focus)="campaignOnePicker.open()">
+                <input matEndDate placeholder="End date" [(ngModel)]="endDate" (focus)="campaignOnePicker.open()">
+              </mat-date-range-input>
+              <mat-datepicker-toggle matSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
+              <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+            </mat-form-field>
+
+          </div>
+          <button mat-raised-button color="accent" (click)="getResults()">Submit </button>
           <div></div>
           <button mat-raised-button color="primary" (click)="openDialog(createTemp)">Create + </button>
           <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"
-          (page)="getApi.page= $event.pageIndex;getApi.limit= $event.pageSize;getResults();">
+            (page)="getApi.page= $event.pageIndex;getApi.limit= $event.pageSize;getResults();">
           </mat-paginator>
         </div>
       </div>
@@ -17,24 +32,33 @@
         <div>
           <table class="tabl">
             <tr>
-              <th class="res-th">S.No</th>
-              <th class="res-th">Date</th>
-              <th class="res-th">Draw</th>
-              <th class="res-th">11.00 AM</th>
-              <th class="res-th">01.00 PM</th>
-              <th class="res-th">06.00 PM</th>
-              <th class="res-th">08.00 PM</th>
+              <th class="res-th tth" style="width: 50px;">S.No</th>
+              <th class="res-th tth" style="width: 200px;">Date</th>
+              <th class="res-th tth" style="width: 100px;">Draw</th>
+              <th class="res-th tth">11.00 AM</th>
+              <th class="res-th tth">01.00 PM</th>
+              <th class="res-th tth">06.00 PM</th>
+              <th class="res-th tth">08.00 PM</th>
+              <!-- <th></th> -->
             </tr>
             <tr *ngFor="let item of data;index as indexNo;">
               <td class="res-th">{{indexNo+1}}</td>
               <td class="res-th">{{item.date | date}}</td>
               <td class="res-th">{{item.draw}}</td>
               <!-- <td class="res-th">{{item['11_am']}}</td> -->
-              <td class="res-td"> <input class="res-in-td" [(ngModel)]="item['11_am']" (change)="updateResults(item)"> </td>
-              <td class="res-td"><input class="res-in-td" [(ngModel)]="item['1_pm']" (change)="updateResults(item)"></td>
-              <td class="res-td"><input class="res-in-td" [(ngModel)]="item['6_pm']" (change)="updateResults(item)"></td>
-              <td class="res-td"><input class="res-in-td" [(ngModel)]="item['8_pm']" (change)="updateResults(item)"></td>
-
+              <td class="res-td"> <input class="res-in-td" [(ngModel)]="item['11_am']" (change)="updateResults(item)">
+              </td>
+              <td class="res-td"><input class="res-in-td" [(ngModel)]="item['1_pm']" (change)="updateResults(item)">
+              </td>
+              <td class="res-td"><input class="res-in-td" [(ngModel)]="item['6_pm']" (change)="updateResults(item)">
+              </td>
+              <td class="res-td"><input class="res-in-td" [(ngModel)]="item['8_pm']" (change)="updateResults(item)">
+              </td>
+              <!-- <td class="res-td">
+                <button (click)="this.dialogRef.close()" mat-icon-button>
+                  <mat-icon>clear</mat-icon>
+                </button>
+              </td> -->
 
             </tr>
           </table>

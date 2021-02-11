@@ -1,26 +1,29 @@
-
 <div class="nav-bar flex align-c pad-5 justify-space-between">
   <div class="header-title flex align-c justify-c">Kerala <span style="color: #373242;"> BIG</span></div>
 
   <div style="color:#fff;" class="f-w-500 pad-10 flex">
-    <div class="font-14 pad-lr-5">Next Result In: </div>  <div class="font-18 flex justify-r"> {{time}} </div>
+    <div class="font-14 pad-lr-5">Next Result In: </div>
+    <div class="font-18 flex justify-r"> {{time}} </div>
   </div>
 
   <div>
-  <button mat-button  style="color: #fff;" routerLink="/main/home" class="mar-r-10">Home</button>
-  <button mat-button style="color: #fff;" routerLink="/main/result" class="mar-r-10">Result</button>
-  <button mat-button style="color: #fff;" routerLink="/main/download" class="mar-r-10">Download</button>
-  <button mat-button style="color: #fff;" routerLink="/main/contact-us" class="mar-r-10">Contact Us</button>
-  <button mat-button  style="color: #fff;" routerLink="/login" class="mar-r-10">login</button>
-</div>
+    <button mat-button style="color: #fff;" routerLink="/main/home" class="mar-r-10">Home</button>
+    <button mat-button style="color: #fff;" routerLink="/main/result" class="mar-r-10">Result</button>
+    <!-- <button mat-button style="color: #fff;" routerLink="/main/download" class="mar-r-10">Download</button> -->
+    <a href="mailto:yuvanesh2018s@gmail.com" target="_blank" mat-icon-button style="color: #fff;">
+      <mat-icon>email</mat-icon>
+    </a>
+    <!-- <button mat-button style="color: #fff;" routerLink="/main/contact-us" class="mar-r-10">Contact Us</button> -->
+    <button mat-button style="background: #fff;margin-left: 30px;" routerLink="/login" class="mar-r-10">login</button>
+  </div>
 
 
 </div>
 <div class="main">
-<div class="overflow-a" style="max-height: calc(100vh - 80px);">
+  <div class="overflow-a" style="max-height: calc(100vh - 80px);">
 
-<router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 
-</div>
+  </div>
 
 </div>

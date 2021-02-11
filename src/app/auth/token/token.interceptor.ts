@@ -24,36 +24,17 @@ export class TokenInterceptor implements HttpInterceptor {
     }
 
     // add authorization header with jwt token if available
-      const token = localStorage.getItem('x-token');
-      if (token) {
-        request = request.clone({
-          setHeaders: {
-            'x-token': token,
-            'current-time': moment().format('YYYY-MM-DD HH:mm:ss'),
-            'utc-time': moment().utc().format('YYYY-MM-DD HH:mm:s')
-          }
-        });
-        return next.handle(request);
-      } else {
-        // Only for login time
-        if (request.url.includes('login') || request.url.includes('otp_callback')) {
-
-          request = request.clone({
-            setHeaders: {
-              'current-time': moment().format('YYYY-MM-DD HH:mm:ss'),
-              'utc-time': moment().utc().format('YYYY-MM-DD HH:mm:s')
-            }
-          });
-          return next.handle(request);
-        } else {
-          if (this.activeRoute.snapshot.queryParams['key']) {
-
-          } else {
-            this.route.navigateByUrl('/login');
-          }
-        }
-        // window.location.replace("/login");
-      }
+    const token = localStorage.getItem('x-token');
+    // if (token) {
+    // request = request.clone({
+    //   setHeaders: {
+    //     'x-token': token,
+    //     'current-time': moment().format('YYYY-MM-DD HH:mm:ss'),
+    //     'utc-time': moment().utc().format('YYYY-MM-DD HH:mm:s')
+    //   }
+    // });
+    return next.handle(request);
+    // }
   }
 
 }

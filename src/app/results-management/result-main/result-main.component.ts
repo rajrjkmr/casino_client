@@ -12,10 +12,10 @@ export class ResultMainComponent implements OnInit {
   dialogRef: any;
   body = {
     'date': '',
-    'one': 0,
-    'two': 0,
-    'three': 0,
-    'four': 0
+    'one': '',
+    'two': '',
+    'three': '',
+    'four': ''
   };
   data = [];
   getApi = {
@@ -64,7 +64,6 @@ export class ResultMainComponent implements OnInit {
     this.apiService.updateResults(item).subscribe(res => {
       console.log(res)
       if (res.statusCode === 200) {
-        // this.data = res.info || [];
       }
     });
   }
@@ -81,8 +80,21 @@ export class ResultMainComponent implements OnInit {
     this.apiService.createResults(body).subscribe(res => {
       if (res.statusCode === 201) {
         this.dialogRef.close();
+        this.body = {
+          'date': '',
+          'one': '',
+          'two': '',
+          'three': '',
+          'four': ''
+        };
+        this.getResults();
       }
     });
+  }
+
+  logout() {
+    localStorage.removeItem('x-token');
+    this.router.navigate(['main']);
   }
 
 }

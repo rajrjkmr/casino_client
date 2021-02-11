@@ -87,3 +87,9 @@
 .tth {
   background: #607d8b4f;
 }
+
+.log-c{
+  display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}

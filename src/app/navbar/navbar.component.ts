@@ -27,21 +27,22 @@ export class NavbarComponent implements OnInit {
 
 
   setTime() {
-    var startTime = moment(this.selectedTime, "HH:mm:ss a");
-    var endTime = moment(moment().format('hh:mm:ss a'), "HH:mm:ss a");
-    var duration = moment.duration(startTime.diff(endTime));
-    let l = duration.get('hours') + duration.get('minutes') + duration.get('seconds');
-    if (l <= 0) {
-      this.time = '00:00:00'
-      this.getNext();
-      var startTime = moment(this.selectedTime, "HH:mm:ss a");
-      var endTime = moment(moment().format('hh:mm:ss a'), "HH:mm:ss a");
-      var duration = moment.duration(startTime.diff(endTime));
-      let l = duration.get('hours') + duration.get('minutes') + duration.get('seconds');
-      this.time = [duration.get('hours'), duration.get('minutes'), duration.get('seconds')].join(':')
+    let now = moment(new Date()); //todays date
+    let end = moment(new Date());// another date
+    if (moment().format('HH:mm:ss') < '11:00:00') {
+      end = moment(moment().format('YYYY-MM-DD 11:00:00'));
+    } else if (moment().format('HH:mm:ss') > '11:00:00' && moment().format('HH:mm:ss') < '13:00:00') {
+      end = moment(moment().format('YYYY-MM-DD 13:00:00'));
+    } else if (moment().format('HH:mm:ss') > '13:00:00' && moment().format('HH:mm:ss') < '18:00:00') {
+      end = moment(moment().format('YYYY-MM-DD 18:00:00'));
+    } else if (moment().format('HH:mm:ss') > '18:00:00' && moment().format('HH:mm:ss') < '20:00:00') {
+      end = moment(moment().format('YYYY-MM-DD 20:00:00'));
     } else {
-      this.time = [duration.get('hours'), duration.get('minutes'), duration.get('seconds')].join(':')
+      end = moment(moment().add(1, 'days').format('YYYY-MM-DD 11:00:00'));
     }
+    let duration = moment.duration(end.diff(now));
+    let days = duration.asDays();
+    this.time = duration.asHours().toString().split('.')[0] + ':' + (duration.asMinutes() % 60).toString().split('.')[0] + ':' + (duration.asSeconds() % 60).toString().split('.')[0];
   }
 
   getNext() {
@@ -54,8 +55,8 @@ export class NavbarComponent implements OnInit {
       this.selectedTime = '6:00 pm'
     } else if (t.isAfter(moment('8:00 pm', "HH:mm:ss a"))) {
       this.selectedTime = '8:00 pm'
-    }else{
-      this.selectedTime= moment().add(1).format('MM-DD-YYYY hh:mm:ss a')
+    } else {
+      this.selectedTime = moment().add(1).format('MM-DD-YYYY hh:mm:ss a')
       // console.log("ss")
       // this.selectedTime = moment().add(1).format('MM-DD-YYYY hh:mm:ss a')
       // console.log(this.selectedTime )

@@ -4,11 +4,11 @@ import { ApiService } from 'src/app/services/api.service';
 import * as moment from 'moment';
 
 @Component({
-  selector: 'app-download',
-  templateUrl: './download.component.html',
-  styleUrls: ['./download.component.css']
+  selector: 'app-result',
+  templateUrl: './result.component.html',
+  styleUrls: ['./result.component.css']
 })
-export class DownloadComponent implements OnInit {
+export class ResultComponent implements OnInit {
 
   campaignOne: FormGroup;
   campaignTwo: FormGroup;
@@ -53,30 +53,7 @@ export class DownloadComponent implements OnInit {
     this.apiService.getResults(this.body).subscribe(res => {
       if (res.statusCode == 200) {
         this.data = res.info;
-        this.data.forEach(i => {
-
-          if (moment().format('YYYY-MM-DD') === moment(i.date).format('YYYY-MM-DD') && moment().format(moment(i.date).format('YYYY-MM-DD') + ' HH:mm:ss') <= moment().format('YYYY-MM-DD 11:00:00')) {
-            i['11_am'] = 'NA';
-          }
-          if (moment().format('YYYY-MM-DD') === moment(i.date).format('YYYY-MM-DD') && moment().format(moment(i.date).format('YYYY-MM-DD') + ' HH:mm:ss') <= moment().format('YYYY-MM-DD 13:00:00')) {
-            i['1_pm'] = 'NA';
-          }
-          if (moment().format('YYYY-MM-DD') === moment(i.date).format('YYYY-MM-DD') && moment().format(moment(i.date).format('YYYY-MM-DD') + ' HH:mm:ss') <= moment().format('YYYY-MM-DD 18:00:0')) {
-            i['6_pm'] = 'NA';
-          }
-          if (moment().format('YYYY-MM-DD') === moment(i.date).format('YYYY-MM-DD') && moment().format(moment(i.date).format('YYYY-MM-DD') + ' HH:mm:ss') <= moment().format('YYYY-MM-DD 20:00:00')) {
-            i['8_pm'] = 'NA';
-          }
-
-          if (moment().format('YYYY-MM-DD') < moment(i.date).format('YYYY-MM-DD')) {
-            i['11_am'] = 'NA';
-            i['1_pm'] = 'NA';
-            i['6_pm'] = 'NA';
-            i['8_pm'] = 'NA';
-          }
-        });
       }
-    });
+    })
   }
-
 }

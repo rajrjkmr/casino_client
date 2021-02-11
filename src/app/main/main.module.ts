@@ -6,10 +6,11 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { MainRoutingModule } from './main-routing.module';
 import { MaterialModule } from '../material-module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ResultComponent } from './result/result.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, DownloadComponent, ContactUsComponent],
+  declarations: [HomeComponent, DownloadComponent, ContactUsComponent, ResultComponent],
   imports: [
     CommonModule,
     MainRoutingModule,

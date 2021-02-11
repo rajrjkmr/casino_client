@@ -11,12 +11,12 @@ export class HomeComponent implements OnInit {
   day = ''
   todayDate = ''
   selectedTime = '11:00 AM'
-  selected:any;
+  selected: any;
   timeList = [
-    {'d_name':'11:00 AM','name':'11_am'},
-    {'d_name':'01:00 PM','name':'1_pm'},
-    {'d_name':'06:00 PM','name':'6_pm'},
-    {'d_name':'08:00 PM','name':'8_pm'},
+    { 'd_name': '11:00 AM', 'name': '11_am' },
+    { 'd_name': '01:00 PM', 'name': '1_pm' },
+    { 'd_name': '06:00 PM', 'name': '6_pm' },
+    { 'd_name': '08:00 PM', 'name': '8_pm' },
   ]
   body: any;
   data: any;
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.selected=this.timeList[0];
+    this.selected = this.timeList[0];
     this.day = moment().format('dddd');
     this.todayDate = moment().format('ll');
     this.result();
@@ -37,7 +37,8 @@ export class HomeComponent implements OnInit {
   result() {
     this.body = {
       limit: 1,
-      page: 0
+      page: 0,
+      sort: 'ASC'
     }
     this.body['start'] = moment().format('YYYY-MM-DD')
     this.body['end'] = moment().format('YYYY-MM-DD')
@@ -46,22 +47,25 @@ export class HomeComponent implements OnInit {
       if (res.statusCode == 200) {
         if (!!res.info.length)
           this.data = res.info[0];
-        this.set(this.data['11_am'])
+          this.setValue('11:00 AM');
       }
-    })
-    this.data = { "11_am": "123", "1_pm": "332", "6_pm": "456", "8_pm": "876", "created_on": "2021-02-08 19:37:35.000000", "date": "2021-02-09", "draw": 123, "id": 3 };
-    this.set(this.data['11_am']);
+    });
+    // this.data = { "11_am": "123", "1_pm": "332", "6_pm": "456", "8_pm": "876", "created_on": "2021-02-08 19:37:35.000000", "date": "2021-02-09", "draw": 123, "id": 3 };
+    // this.set(this.data['11_am']);
   }
 
+
   setValue(item) {
-    if (item == '11:00 AM') {
+    if (item == '11:00 AM' && moment().format('HH:mm:ss') >= "11:00:00") {
       this.set(this.data['11_am']);
-    } else if (item == '01:00 PM') {
+    } else if (item == '01:00 PM' && moment().format('HH:mm:ss') >= "13:00:00") {
       this.set(this.data['1_pm']);
-    } else if (item == '06:00 PM') {
+    } else if (item == '06:00 PM' && moment().format('HH:mm:ss') >= "18:00:00") {
       this.set(this.data['6_pm']);
-    } else if (item == '08:00 PM') {
+    } else if (item == '08:00 PM' && moment().format('HH:mm:ss') >= "20:00:00") {
       this.set(this.data['8_pm']);
+    }else{
+      this.set('');
     }
   }
   set(value) {

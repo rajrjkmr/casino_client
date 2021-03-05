@@ -69,7 +69,7 @@ export class HomeComponent implements OnInit {
     }
   }
   set(value) {
-    if (value && value + ''.length >= 3) {
+    if (value && value.length >= 3) {
       let f = value.split('');
       this.a = f[0];
       this.b = f[1];

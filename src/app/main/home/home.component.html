@@ -1,23 +1,21 @@
-<!-- <div class="tab-list grid g-c-a-max">
-  <div class="tab-item f-w-500 font-15  {{selected==item?'active-tab':''}}  align-c pointer"
-    (click)="selected=item;setValue(item['d_name'])" *ngFor="let item of timeList" matRipple>{{item?.d_name}}</div>
-</div> -->
 
 <mat-tab-group>
   <mat-tab label="{{item?.d_name}}" (click)="selected=item" *ngFor="let item of timeList">
     <div style="background-image: url(../../../assets/img/p1.png);background-size: cover;">
       <div>
         <div class="box-s1 pad-10 f-w-500 font-20 flex align-c justify-c he">GOLD {{day}} {{selected['d_name']}}</div>
-        <div class="flex justify-space-between box-s1"
-          style="width: 90%;padding: 20px;background: #ffffffa3;/* align-self: center; */margin-left: 23px;">
-          <div style="margin-left: 83px;">
+        <div class="flex justify-c" >
+          <div class="flex justify-space-between box-s1"
+          style="width: 90%;padding: 20px;background: #ffffffa3;/* align-self: center;">
+          <div>
             <div class="font-20 pad-tb-10">Draw No</div>
-            <div class="font-35 f-w-500" style="line-height: 40px;    color: #cc1413;">{{data?.draw}}</div>
+            <div class="font-35 f-w-500" style="line-height: 40px;color: #cc1413;">{{data?.draw}}</div>
           </div>
-          <div style="margin-right: 20px;">
+          <div >
             <div class="font-20 pad-tb-10">Draw Date</div>
             <div class="font-35 f-w-500" style="line-height: 40px;    color: #cc1413;">{{todayDate}}</div>
           </div>
+        </div>
         </div>
 
         <div class="pos-r flex justify-c">

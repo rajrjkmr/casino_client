@@ -23,7 +23,7 @@
     </div>
   </form>
 
-  <div id="pdfTable" #pdfTable style="height:calc(100vh - 265px);overflow: auto;">
+  <div id="pdfTable" #pdfTable style="height:calc(100vh - 325px);overflow: auto;">
     <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" *ngIf="!!data.length"
     (page)="body.page= $event.pageIndex;body.limit= $event.pageSize;result();">
     </mat-paginator>

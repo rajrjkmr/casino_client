@@ -32,26 +32,26 @@
 }
 
 .d1 {
-    box-sizing: border-box;
-    background: #f4ae36;
-    height: 77px;
-    line-height: 77px;
-    width: 54px;
-    color: #cc1413;
-    background: linear-gradient(to bottom right, #ffffff, #525252);
+  box-sizing: border-box;
+  background: #f4ae36;
+  height: 77px;
+  line-height: 77px;
+  width: 54px;
+  color: #cc1413;
+  background: linear-gradient(to bottom right, #ffffff, #525252);
 }
 
 .d2 {
-    padding: 10px;
-    box-sizing: border-box;
-    background: #762d0fe8;
-    height: 75px;
-    line-height: 72px;
-    width: 54px;
-    align-self: center;
-    margin-left: 25px;
-    color: #cc1212;
-    background-image: linear-gradient(to bottom right, #ffffff, #525252);
+  padding: 10px;
+  box-sizing: border-box;
+  background: #762d0fe8;
+  height: 75px;
+  line-height: 72px;
+  width: 54px;
+  align-self: center;
+  margin-left: 25px;
+  color: #cc1212;
+  background-image: linear-gradient(to bottom right, #ffffff, #525252);
 }
 
 .d3 {
@@ -67,6 +67,12 @@
   ;
 }
 
-::ng-deep .mat-tab-label{
+::ng-deep .mat-tab-label {
   width: 25%;
+}
+
+.ds {
+  background-image: url(../../../assets/img/slot.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }

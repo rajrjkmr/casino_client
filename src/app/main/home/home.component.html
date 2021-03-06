@@ -1,6 +1,10 @@
+<!-- <div class="tab-list grid g-c-a-max">
+  <div class="tab-item f-w-500 font-15  {{selected==item?'active-tab':''}}  align-c pointer"
+    (click)="selected=item;setValue(item['d_name'])" *ngFor="let item of timeList" matRipple>{{item?.d_name}}</div>
+</div> -->
 
-<mat-tab-group>
-  <mat-tab label="{{item?.d_name}}" (click)="selected=item" *ngFor="let item of timeList">
+<mat-tab-group (selectedTabChange)="setValue($event,'event')">
+  <mat-tab label="{{item?.d_name}}"  *ngFor="let item of timeList">
     <div style="background-image: url(../../../assets/img/p1.png);background-size: cover;">
       <div>
         <div class="box-s1 pad-10 f-w-500 font-20 flex align-c justify-c he">GOLD {{day}} {{selected['d_name']}}</div>

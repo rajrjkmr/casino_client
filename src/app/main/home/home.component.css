@@ -9,8 +9,8 @@
 }
 
 .active-tab {
-  border-bottom: 3px solid var(--color-primary);
-  color: var(--color-primary);
+  /* border-bottom: 3px solid var(--color-primary);
+  color: var(--color-primary); */
 }
 
 .g-c-a-max {
@@ -65,4 +65,8 @@
   color: #cc1212;
   background-image: linear-gradient(to bottom right, #ffffff, #525252);
   ;
+}
+
+::ng-deep .mat-tab-label{
+  width: 25%;
 }

@@ -1,26 +1,39 @@
-
-.main{
+.main {
   background: #ffffffe0;
   margin: auto;
   margin: 30px auto auto auto;
-  width: 900px;
-  border-radius: 13px 13px 13px 13px;
+  width: 99%;
+  max-width: 900px;
+  border-radius: 13px;
   min-height: 300px;
-  height: 88%;
+  max-height: calc(100vh - 100px);
+  height: max-content;
+  overflow: hidden;
 }
-.header-title{
+
+.header-title {
   font-family: 'Black Ops One', cursive;
-    font-size: 40px;
-    height: 70px;
-    color: #e57841;
+  font-size: 40px;
+  color: #e57841;
 }
-.nav-bar{
+
+.nav-bar {
   box-shadow: rgb(0 0 0 / 20%) 0px 2px 2px;
   background: #39a3ad;
   height: 50px;
 }
 
-::ng-deep .mat-tab-label-active{
+::ng-deep .mat-tab-label-active {
   font-size: 18px;
   color: var(--color-primary);
+}
+::ng-deep .mat-drawer-content{
+  height: 98% !important;
+  min-height: 98% !important;
+}
+
+.mat-drawer-container {
+  background-image: url(../../assets/img/bg.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }

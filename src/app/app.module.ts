@@ -10,6 +10,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './auth/token/token.interceptor';
 import { ErrorsInterceptor } from './auth/errors/errors.interceptor';
+import {FlexLayoutModule} from "@angular/flex-layout";
+
+
 @NgModule({
   declarations: [
     AppComponent, NavbarComponent
@@ -21,7 +24,8 @@ import { ErrorsInterceptor } from './auth/errors/errors.interceptor';
     MaterialModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlexLayoutModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
   { provide: HTTP_INTERCEPTORS, useClass: ErrorsInterceptor, multi: true },

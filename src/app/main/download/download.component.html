@@ -3,7 +3,7 @@
     <div class="flex align-c justify-c">
       <div>
         <div class="font-20 pad-tb-20 flex justify-c" style="color: var(--color-primary);">Download Results</div>
-        <div class="flex ">
+        <div class="action-list ">
           <mat-form-field class="width-100" appearance="fill">
             <mat-label>Date Range</mat-label>
             <mat-date-range-input [rangePicker]="campaignOnePicker" [comparisonStart]="campaignTwo.value.start"
@@ -23,7 +23,7 @@
     </div>
   </form>
 
-  <div id="pdfTable" #pdfTable>
+  <div id="pdfTable" #pdfTable style="height:calc(100vh - 265px);overflow: auto;">
     <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" *ngIf="!!data.length"
     (page)="body.page= $event.pageIndex;body.limit= $event.pageSize;result();">
     </mat-paginator>

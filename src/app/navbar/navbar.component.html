@@ -1,4 +1,4 @@
-<div class="nav-bar flex align-c pad-5 justify-space-between">
+<!-- <div class="nav-bar flex align-c pad-5 justify-space-between">
   <div class="header-title flex align-c justify-c">Kerala <span style="color: #373242;"> BIG</span></div>
 
   <div style="color:#fff;" class="f-w-500 pad-10 flex">
@@ -9,11 +9,9 @@
   <div>
     <button mat-button style="color: #fff;" routerLink="/main/home" class="mar-r-10">Home</button>
     <button mat-button style="color: #fff;" routerLink="/main/result" class="mar-r-10">Result</button>
-    <!-- <button mat-button style="color: #fff;" routerLink="/main/download" class="mar-r-10">Download</button> -->
     <a href="mailto:yuvanesh2018s@gmail.com" target="_blank" mat-icon-button style="color: #fff;">
       <mat-icon>email</mat-icon>
     </a>
-    <!-- <button mat-button style="color: #fff;" routerLink="/main/contact-us" class="mar-r-10">Contact Us</button> -->
     <button mat-button style="background: #fff;margin-left: 30px;" routerLink="/login" class="mar-r-10">login</button>
   </div>
 
@@ -26,4 +24,50 @@
 
   </div>
 
-</div>
+</div> -->
+
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="flex align-c justify-space-between"> 
+    <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="header-title flex align-c justify-c pad-10">Kerala <span style="color: #373242;"> BIG</span></div>
+    <span class="menu-spacer"></span>
+    <div style="color:#fff;" class="f-w-500 pad-10 flex" fxShow="true" fxHide.lt-md>
+      <div class="font-14 pad-lr-5">Next Result In: </div>
+      <div class="font-18 flex justify-r"> {{time}} </div>
+    </div>
+    <div fxShow="true" fxHide.lt-md>
+      <a href="#" routerLink="/main/home" mat-button>Home</a>
+      <a href="#" routerLink="/main/result" mat-button>Result</a>
+      <a href="mailto:yuvanesh2018s@gmail.com" target="_blank" mat-button>Contact</a>
+      <a href="#" routerLink="/login" mat-button>Login</a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container fxFlexFill>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <div class="f-w-500 pad-10 flex" >
+        <div class="font-12 pad-lr-5">Next Result In: </div>
+        <div class="font-16 flex justify-r"> {{time}} </div>
+      </div>
+      <a href="#" (click)="sidenav.toggle()" routerLink="/main/home" mat-list-item>Home</a>
+      <a href="#" (click)="sidenav.toggle()" routerLink="/main/result" mat-list-item>Result</a>
+      <a href="mailto:yuvanesh2018s@gmail.com" target="_blank" mat-list-item>
+        Contact
+      </a>
+      <a href="#" (click)="sidenav.toggle()" routerLink="/login" mat-list-item>Login</a>
+      <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content fxFlexFill>
+    <div class="main">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

@@ -23,4 +23,11 @@ table {
     color: #000000;
     font-weight: 300 !important;
   }
-  
+  .action-list{
+    display: flex;
+  }
+  @media screen and (max-width: 490px) {
+     .action-list{
+      display: block;
+    }
+  }

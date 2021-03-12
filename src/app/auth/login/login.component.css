@@ -1,6 +1,5 @@
 .m-con{
     grid-template-rows: 1fr 26rem;
-    background-image: url(https://api.myairliftusa.com/uploads/chat_login_bg_svg_2_2021-02-04_13:37:56.svg);
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: bottom;
@@ -57,7 +56,7 @@ input{
     box-sizing: border-box;
     align-self: center;
   }
-  
+
   .code-input:focus {
     border-color: var(--color-primary);
   }
@@ -75,7 +74,7 @@ input{
   .shake {
     /* Start the shake animation and make the animation last for 0.5 seconds */
     animation: shake 0.5s;
-  
+
     /* When the animation is finished, start again */
     animation-iteration-count: 1;
   }
@@ -93,4 +92,11 @@ input{
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+
+  @media only screen and (max-width: 600px) {
+  .login-c{
+      width: 20rem;
+    }
   }

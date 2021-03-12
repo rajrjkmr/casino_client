@@ -70,5 +70,12 @@
 ::ng-deep .mat-tab-label {
   width: 25%;
 }
+.font-in-m{
+  font-size: 35px;
+}
 
-
+@media only screen and (max-width: 600px) {
+  .font-in-m{
+    font-size: 25px;
+  }
+}

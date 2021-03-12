@@ -4,6 +4,7 @@
   box-sizing: border-box;
   height: 100%;
   width: 100%;
+  overflow: auto;
 
 }
 
@@ -88,8 +89,24 @@
   background: #607d8b4f;
 }
 
-.log-c{
+.log-c {
   display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+@media only screen and (max-width: 600px) {
+  .res-c {
+    padding: 10px;
+    overflow: auto;
+  }
+
+  .p-c {
+    grid-gap: 8px;
+    grid-template-columns: auto;
+  }
+
+  .log-c {
+    margin-bottom: 10px;
+  }
 }

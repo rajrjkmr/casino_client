@@ -25,7 +25,6 @@ export class NavbarComponent implements OnInit {
     setInterval((() => this.setTime()), 1000);
   }
 
-
   setTime() {
     let now = moment(new Date()); //todays date
     let end = moment(new Date());// another date

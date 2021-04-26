@@ -15,7 +15,8 @@ export class ResultMainComponent implements OnInit {
     'one': '',
     'two': '',
     'three': '',
-    'four': ''
+    'four': '',
+    'five':'',
   };
   data = [];
   getApi = {
@@ -74,8 +75,9 @@ export class ResultMainComponent implements OnInit {
       'date': moment(this.body.date).format('YYYY-MM-DD HH:mm:ss'),
       '11_am': this.body.one,
       '1_pm': this.body.two,
-      '6_pm': this.body.three,
-      '8_pm': this.body.four
+      '3_pm': this.body.three,
+      '6_pm': this.body.four,
+      '8_pm': this.body.five
     };
     this.apiService.createResults(body).subscribe(res => {
       if (res.statusCode === 201) {
@@ -85,7 +87,8 @@ export class ResultMainComponent implements OnInit {
           'one': '',
           'two': '',
           'three': '',
-          'four': ''
+          'four': '',
+          'five':''
         };
         this.getResults();
       }

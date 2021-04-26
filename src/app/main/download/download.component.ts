@@ -61,6 +61,9 @@ export class DownloadComponent implements OnInit {
           if (moment().format('YYYY-MM-DD') === moment(i.date).format('YYYY-MM-DD') && moment().format(moment(i.date).format('YYYY-MM-DD') + ' HH:mm:ss') <= moment().format('YYYY-MM-DD 13:00:00')) {
             i['1_pm'] = 'NA';
           }
+          if (moment().format('YYYY-MM-DD') === moment(i.date).format('YYYY-MM-DD') && moment().format(moment(i.date).format('YYYY-MM-DD') + ' HH:mm:ss') <= moment().format('YYYY-MM-DD 15:00:0')) {
+            i['3_pm'] = 'NA';
+          }
           if (moment().format('YYYY-MM-DD') === moment(i.date).format('YYYY-MM-DD') && moment().format(moment(i.date).format('YYYY-MM-DD') + ' HH:mm:ss') <= moment().format('YYYY-MM-DD 18:00:0')) {
             i['6_pm'] = 'NA';
           }
@@ -71,6 +74,7 @@ export class DownloadComponent implements OnInit {
           if (moment().format('YYYY-MM-DD') < moment(i.date).format('YYYY-MM-DD')) {
             i['11_am'] = 'NA';
             i['1_pm'] = 'NA';
+            i['3_pm'] = 'NA';
             i['6_pm'] = 'NA';
             i['8_pm'] = 'NA';
           }

@@ -40,6 +40,7 @@
               <th class="res-th tth" style="width: 100px;">Draw</th>
               <th class="res-th tth">11.00 AM</th>
               <th class="res-th tth">01.00 PM</th>
+              <th class="res-th tth">03.00 PM</th>
               <th class="res-th tth">06.00 PM</th>
               <th class="res-th tth">08.00 PM</th>
               <!-- <th></th> -->
@@ -53,6 +54,9 @@
               </td>
               <td class="res-td"><input class="res-in-td" [(ngModel)]="item['1_pm']" (change)="updateResults(item)">
               </td>
+              <td class="res-td"><input class="res-in-td" [(ngModel)]="item['3_pm']" (change)="updateResults(item)">
+              </td>
+
               <td class="res-td"><input class="res-in-td" [(ngModel)]="item['6_pm']" (change)="updateResults(item)">
               </td>
               <td class="res-td"><input class="res-in-td" [(ngModel)]="item['8_pm']" (change)="updateResults(item)">
@@ -101,14 +105,19 @@
       </div>
 
       <div class="input-con">
-        <mat-label>06.00 PM</mat-label>
+        <mat-label>03.00 PM</mat-label>
         <input type="text" class="input-b-c" [(ngModel)]="body.three">
+      </div>
+
+      <div class="input-con">
+        <mat-label>06.00 PM</mat-label>
+        <input type="text" class="input-b-c" [(ngModel)]="body.four">
       </div>
 
 
       <div class="input-con">
         <mat-label>08.00 PM</mat-label>
-        <input type="text" class="input-b-c" [(ngModel)]="body.four">
+        <input type="text" class="input-b-c" [(ngModel)]="body.five">
       </div>
 
     </div>
